@@ -16,6 +16,9 @@ export class RecetaComponent implements OnInit {
   isGlutenFree : boolean;
   ingredientes : string[];
 
+  show: boolean;
+  glyphicon: string;
+
   constructor() { 
     console.log('RecetaComponent constructor');
     this.nombre = 'Bokata Kalamares';
@@ -25,6 +28,9 @@ export class RecetaComponent implements OnInit {
     this.isGlutenFree = false;
     this.cocinero = 'Karlos Argiñano';
     this.ingredientes = ['Calamares','Limón','Pan','Salsa Ali-oli'];
+
+    this.show = false;
+    this.glyphicon = 'glyphicon-chevron-down';
   }
 
   ngOnInit() {
@@ -35,6 +41,12 @@ export class RecetaComponent implements OnInit {
   sumarLike(){
     console.log('Click sumarLike');
     this.likes++;
+  }
+
+  showIngredientes(){
+    console.log('Click showIngredientes');
+    this.show = !this.show;
+    this.glyphicon = ( this.show )?'glyphicon-chevron-up':'glyphicon-chevron-down';
   }
 
 
