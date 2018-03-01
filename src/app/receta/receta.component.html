@@ -9,7 +9,7 @@
     <img src="{{imagen}}" alt="{{nombre}}">
 
     <div class="caption">
-      <h3>{{nombre | uppercase }}</h3>
+      <h3>{{nombre | uppercase }}</h3>     
       <p>{{descripcion | slice:0:100 }}...</p>
       <p>
         <span class="cocinero">{{cocinero}}</span>
@@ -18,8 +18,10 @@
     </div>
 
     <section class="ingredientes">
-      <h4 (click)="showIngredientes()">Ingredientes 
-          <span class="glyphicon {{glyphicon}}"></span>
+      <h4 (click)="showIngredientes()">
+          Ingredientes
+          <span class="badge">{{ingredientes.length}}</span>
+          <span class="glyphicon {{glyphicon}}"  aria-hidden="true"></span>
       </h4>
 
       <ol *ngIf="show">

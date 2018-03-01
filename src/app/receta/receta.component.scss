@@ -35,10 +35,11 @@
 
         &:hover{
             background-color: greenyellow;
+            cursor: pointer;
         }
     }
 
-    span{
+    span.glyphicon{
         float: right;
         margin-right: 10px;
     }
