@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Receta } from '../model/receta';
+
 @Component({
   selector: 'app-receta',
   templateUrl: './receta.component.html',
@@ -7,27 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecetaComponent implements OnInit {
 
-  //atributos
-  nombre : string;
-  imagen : string;
-  likes  : number;
-  cocinero : string;
-  descripcion : string;
-  isGlutenFree : boolean;
-  ingredientes : string[];
-
+  //atributos  
+  receta : Receta;
   show: boolean;
   glyphicon: string;
 
   constructor() { 
     console.log('RecetaComponent constructor');
-    this.nombre = 'Bokata Kalamares';
-    this.imagen = 'https://www.recetin.com/wp-content/uploads/2012/05/tumblr_ll41lyi9LV1qd17wdo1_500.jpg';
-    this.likes = 15;
-    this.descripcion = 'Un referente de la cocina madrileña es su bocata de calameres. Como homenaje a los madrileños que celebran el día de su comunidad, vaya aquí esta receta con el toque diferente de la salsa tártara. Igualmente puedes echarles un buen alioli o mayonesa, claro está, pero creo la tártara le va como anillas de calamar al dedo. Feliz día, y buen provecho.';
-    this.isGlutenFree = false;
-    this.cocinero = 'Karlos Argiñano';
-    this.ingredientes = ['Calamares','Limón','Pan','Salsa Ali-oli'];
+
+    this.receta = new Receta('Marmitako', 'Karlos Argiñano');
+    this.receta.imagen = 'https://www.hogarmania.com/archivos/201709/6019-1-marmitako-xl-848x477x80xX.jpg';
+    this.receta.descripcion = 'Marmitako de Bonito o Atún. Hoy veremos como hacer un Marmitako en casa, una receta tradicional vasca muy típica del verano que es cuando se captura el bonito.';
+
+    //ingredientes
+    this.receta.addIngrediente('patatas');
+    this.receta.addIngrediente('bonito');
+    this.receta.addIngrediente('pimiento verde');
+    this.receta.addIngrediente('aceite');
+    this.receta.addIngrediente('pimiento choricero');
 
     this.show = false;
     this.glyphicon = 'glyphicon-chevron-down';
@@ -40,7 +39,7 @@ export class RecetaComponent implements OnInit {
 
   sumarLike(){
     console.log('Click sumarLike');
-    this.likes++;
+    this.receta.likes++;
   }
 
   showIngredientes(){
