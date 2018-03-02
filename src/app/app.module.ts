@@ -11,6 +11,7 @@ import { Page404Component } from './page404/page404.component';
 import { HomeComponent } from './home/home.component';
 import { ConcesionarioComponent } from './concesionario/concesionario.component';
 import { CocheComponent } from './concesionario/coche/coche.component';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CocheComponent } from './concesionario/coche/coche.component';
     Page404Component,
     HomeComponent,
     ConcesionarioComponent,
-    CocheComponent
+    CocheComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,
