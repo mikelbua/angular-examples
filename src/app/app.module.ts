@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { ConcesionarioComponent } from './concesionario/concesionario.component';
 import { CocheComponent } from './concesionario/coche/coche.component';
+import { ListadoComponent } from './concesionario/listado/listado.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { CocheComponent } from './concesionario/coche/coche.component';
     HomeComponent,
     UsuarioComponent,
     ConcesionarioComponent,
-    CocheComponent
+    CocheComponent,
+    ListadoComponent
   ],
   imports: [
     BrowserModule,

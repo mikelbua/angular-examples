@@ -17,6 +17,10 @@ export class Coche{
         this.modelo = modelo;
         this.version = version;
         this.foto = 'assets/imgs/coche_default.jpg';
+        this.puertas = 0;
+        this.caballos = 0;
+        this.consumo = 0;
+
     }
 
 }
