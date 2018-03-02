@@ -9,6 +9,8 @@ import { RecetaComponent } from './receta/receta.component';
 import { PropiedadesComponent } from './propiedades/propiedades.component';
 import { Page404Component } from './page404/page404.component';
 import { HomeComponent } from './home/home.component';
+import { ConcesionarioComponent } from './concesionario/concesionario.component';
+import { CocheComponent } from './concesionario/coche/coche.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { HomeComponent } from './home/home.component';
     RecetaComponent,
     PropiedadesComponent,
     Page404Component,
-    HomeComponent
+    HomeComponent,
+    ConcesionarioComponent,
+    CocheComponent
   ],
   imports: [
     BrowserModule,

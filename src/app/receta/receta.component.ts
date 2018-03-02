@@ -17,6 +17,7 @@ export class RecetaComponent implements OnInit {
   constructor() { 
     console.log('RecetaComponent constructor');
 
+    //crear receta
     this.receta = new Receta('Marmitako', 'Karlos Argiñano');
     this.receta.imagen = 'https://www.hogarmania.com/archivos/201709/6019-1-marmitako-xl-848x477x80xX.jpg';
     this.receta.descripcion = 'Marmitako de Bonito o Atún. Hoy veremos como hacer un Marmitako en casa, una receta tradicional vasca muy típica del verano que es cuando se captura el bonito.';

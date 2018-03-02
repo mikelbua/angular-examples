@@ -1,0 +1,19 @@
+
+<h2>{{titulo}}</h2>
+
+{{selectedCoche|json}}
+
+<ul>
+  <li *ngFor="let coche of coches"
+      [class.selected]="coche === selectedCoche"
+  >
+    {{coche.marca}}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let coche of coches">
+      <app-coche [coche]="coche" (pasameCoche)="showCoche($event)"></app-coche>
+  </li>
+</ul>
+
