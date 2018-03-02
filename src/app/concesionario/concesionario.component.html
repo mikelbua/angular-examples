@@ -1,19 +1,26 @@
+<p>Ejemplo de un Componente Padre <b>ConcesionarioComponent</b> e Hijo <b>CocheComponent</b>. Aprender a pasar parametros de una a otro @input @output</p>
 
-<h2>{{titulo}}</h2>
 
-{{selectedCoche|json}}
+<nav aria-label="Catalogo de Coches">
+    <ul class="pagination">
+        <li *ngFor="let coche of stock" [class.active]="coche == coche1">
+            <a>{{coche.marca}} {{coche.modelo}}</a>
+        </li>    
+    </ul>
+</nav>
 
-<ul>
-  <li *ngFor="let coche of coches"
-      [class.selected]="coche === selectedCoche"
-  >
-    {{coche.marca}}
-  </li>
-</ul>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Catalogo Coches</h3>
+    </div>
+    <div class="panel-body">
+        <div *ngFor="let cocheIteracion of stock">
+            <!-- llamda componente Hijo -->
+            <app-coche [cocheParametro]="cocheIteracion"
+                       (cocheSeleccionado)="recibirCoche($event)">
+            </app-coche>
+        </div>
+    </div>
+</div>
 
-<ul>
-  <li *ngFor="let coche of coches">
-      <app-coche [coche]="coche" (pasameCoche)="showCoche($event)"></app-coche>
-  </li>
-</ul>
 

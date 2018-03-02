@@ -8,19 +8,28 @@ import { Coche } from '../../model/coche';
   styleUrls: ['./coche.component.scss']
 })
 export class CocheComponent implements OnInit {
+  
+  //Parametro de Entrada desde el Componete Padre al Hijo
+  @Input('cocheParametro') coche : Coche;
 
-  marca : string;
-  @Input('coche') coche : Coche;
-  @Output() pasameCoche = new EventEmitter();
+  //los parametros de salida se realizan a traves de Eventos
+  @Output() cocheSeleccionado = new EventEmitter();
 
-  constructor() { }
+  constructor() {
+    console.log('CocheComponent constructor');
+  }
 
   ngOnInit() {
+    console.log('CocheComponent ngOnInit');
   }
-
-  // Cuando se lance el evento click en la plantilla llamaremos a este método
+  
+  /**
+   * Funcion para Emitir el Evento desde el Hijo hacia el Padre
+   */
   seleccionar($event){
-    this.pasameCoche.emit({coche: this.coche} );
+    console.log('CocheComponent: Emitimos evento al ComponentePadre %o', this.coche );
+    this.cocheSeleccionado.emit({ "coche": this.coche });
   }
+ 
 
 }

@@ -9,30 +9,33 @@ import { Coche } from '../model/coche';
 })
 export class ConcesionarioComponent implements OnInit {
 
-  coches : Array<Coche>;
-  titulo : string;
-  selectedCoche : Coche;
+  stock : Array<Coche>;  //Array casteado a Coche
+  coche1 : Coche;
+  coche2 : Coche;
 
   constructor() {
+    console.log('ConcesionarioComponent constructor');     
 
-      this.selectedCoche = new Coche('');
+    this.coche1 = new Coche('','');
+    this.coche2 = new Coche('','');
 
-      this.titulo = "Concesionario";
-
-      this.coches = new Array<Coche>();
-      this.coches.push( new Coche('Seat') );
-      this.coches.push( new Coche('Lamborgini') );
-      this.coches.push( new Coche('Renault') );
-      this.coches.push( new Coche('Tesla') );
+    this.stock = new Array<Coche>();
+    this.stock.push( new Coche('Seat','Panda') );
+    this.stock.push( new Coche('Toyota','Verso') );
+    this.stock.push( new Coche('Opel','Corsa','v1.6') );
   }
 
   ngOnInit() {
+    console.log('ConcesionarioComponent ngOnInit');     
   }
 
-  showCoche(event):void{
-      console.log('evento %o', event );
-      console.log('coche %o', event.coche);
-      this.selectedCoche = event.coche;
+  recibirCoche(event){
+    console.log('ConcesionarioComponent: recibirCoche %o', event.coche); 
+    
+    this.coche1 = event.coche;
+    
   }
+
+  
 
 }
