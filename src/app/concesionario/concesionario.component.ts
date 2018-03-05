@@ -16,13 +16,13 @@ export class ConcesionarioComponent implements OnInit {
   constructor() {
     console.log('ConcesionarioComponent constructor');     
 
-    this.coche1 = new Coche('coche1','');
-    this.coche2 = new Coche('coche2','');
+    this.coche1 = new Coche('coche1','',4);
+    this.coche2 = new Coche('coche2','',4);
 
     this.stock = new Array<Coche>();
-    this.stock.push( new Coche('Seat','Panda') );
-    this.stock.push( new Coche('Toyota','Verso') );
-    this.stock.push( new Coche('Opel','Corsa','v1.6') );
+    this.stock.push( new Coche('Seat','Panda',3,'https://www.minicar.es/large/Fiat-Panda-%281980%29-RBA-Entrega-29-1%3A43-i33233.jpg') );
+    this.stock.push( new Coche('Toyota','Verso',4,'https://www.supremeautomotivegroup.com/assets/stock/expanded/white/640/2017tos110001_640/2017tos110001_640_07.jpg') );
+    this.stock.push( new Coche('Opel','Corsa',5) );
   }
 
   ngOnInit() {

@@ -1,12 +1,15 @@
-
 <div class="col-sm-6 col-md-4" 
      (click)="seleccionar($event)">
 
     <div class="thumbnail">
-        <img src="{{coche.foto}}" alt="foto {{coche.marca}} {{coche.modelo}}">
+        <img src="{{c1.foto}}" alt="foto {{c1.marca}} {{c1.modelo}}">
         <div class="caption">
-            <h3>{{coche.marca}}</h3>
-            <p>{{coche.modelo}} {{coche.version}}</p>           
+            <h3>{{c1.marca}}</h3>
+            <p>{{c1.modelo}} {{c1.version}}</p>    
+            <hr>
+            <p>Puertas: {{c1.puertas}}
+                <span [class]="(c1.puertas-c2.puertas>0)?'badge positivo':'badge negativo'">{{c1.puertas-c2.puertas}}</span>
+            </p>       
         </div>
     </div>
 </div>

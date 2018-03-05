@@ -10,7 +10,8 @@ import { Coche } from '../../model/coche';
 export class CocheComponent implements OnInit {
   
   //Parametro de Entrada desde el Componete Padre al Hijo
-  @Input('cocheParametro') coche : Coche;
+  @Input('c1') c1 : Coche; // coche para mostrar
+  @Input('c2') c2 : Coche; // coche para comparar
 
   constructor() {
     console.log('CocheComponent constructor');

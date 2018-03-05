@@ -11,13 +11,17 @@ export class Coche{
     caballos: number;
     consumo: number;
     
-    constructor( marca:string , modelo:string, version?:string ){
+    constructor( marca:string , modelo:string, puertas:number, foto?:string, version?:string ){
         this.id = -1;
         this.marca = marca;
         this.modelo = modelo;
         this.version = version;
-        this.foto = 'assets/imgs/coche_default.jpg';
-        this.puertas = 0;
+        if ( foto ){
+            this.foto = foto;
+        }else{
+            this.foto = 'assets/imgs/coche_default.jpg';
+        }    
+        this.puertas = puertas;
         this.caballos = 0;
         this.consumo = 0;
 
