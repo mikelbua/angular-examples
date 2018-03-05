@@ -10,6 +10,12 @@
             <p>Puertas: {{c1.puertas}}
                 <span [class]="(c1.puertas-c2.puertas>0)?'badge positivo':'badge negativo'">{{c1.puertas-c2.puertas}}</span>
             </p>       
+            <p>Caballos: {{c1.caballos}}
+                <span [class]="(c1.caballos-c2.caballos>0)?'badge positivo':'badge negativo'">{{c1.caballos-c2.caballos}}</span>
+            </p>       
+            <p>Consumo: {{c1.consumo}}
+                <span [class]="(c1.consumo-c2.consumo>0)?'badge positivo':'badge negativo'">{{c1.consumo-c2.consumo | round }}</span>
+            </p>       
         </div>
     </div>
 </div>

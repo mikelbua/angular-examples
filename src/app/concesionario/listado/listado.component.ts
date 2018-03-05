@@ -11,6 +11,10 @@ export class ListadoComponent implements OnInit {
   @Input('stockParametro') stock : Array<Coche>;
   //los parametros de salida se realizan a traves de Eventos
   @Output() eventoEmitir = new EventEmitter();
+
+  //coches seleccionados
+  c1:Coche;
+  c2:Coche;
  
   constructor() { }
 
@@ -28,6 +32,9 @@ export class ListadoComponent implements OnInit {
                                  "otroParametro" : 2018
                               }
                           );
+
+     this.c2 = this.c1;                     
+     this.c1 = coche;                     
   }
  
 

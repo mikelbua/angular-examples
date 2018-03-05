@@ -7,6 +7,9 @@ import { AppRouter } from './app.route';
 //Services
 import { CochesService } from './providers/coches.service';
 
+//Pipes
+import { RoundPipe } from './pipes/round.pipe';
+
 //Componentes
 import { AppComponent } from './app.component';
 import { RecetaComponent } from './receta/receta.component';
@@ -20,6 +23,7 @@ import { ListadoComponent } from './concesionario/listado/listado.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +34,8 @@ import { ListadoComponent } from './concesionario/listado/listado.component';
     UsuarioComponent,
     ConcesionarioComponent,
     CocheComponent,
-    ListadoComponent
+    ListadoComponent,
+    RoundPipe,
   ],
   imports: [
     BrowserModule,

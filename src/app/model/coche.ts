@@ -5,8 +5,6 @@ export class Coche{
     modelo : string;
     version : string;
     foto : string;
-
-    //caracteristicas
     puertas : number;
     caballos: number;
     consumo: number;

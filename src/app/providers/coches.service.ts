@@ -29,6 +29,9 @@ export class CochesService {
                           element.foto,
                           element.version
                           );
+        coche.caballos = element.caballos;                  
+        coche.potencia = element.potencia;
+        coche.consumo = element.consumo;
 
         coches.push(coche);
 
