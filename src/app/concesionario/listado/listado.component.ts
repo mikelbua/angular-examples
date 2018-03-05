@@ -15,6 +15,9 @@ export class ListadoComponent implements OnInit {
   //coches seleccionados
   c1:Coche;
   c2:Coche;
+
+  //Criterio del buscador
+  searchText:string;
  
   constructor() { }
 
@@ -33,6 +36,7 @@ export class ListadoComponent implements OnInit {
                               }
                           );
 
+     //actualizar coches seleccionados                           
      this.c2 = this.c1;                     
      this.c1 = coche;                     
   }

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 //Nuestro Modulo para Routing
 import { AppRouter } from './app.route';
@@ -9,6 +10,7 @@ import { CochesService } from './providers/coches.service';
 
 //Pipes
 import { RoundPipe } from './pipes/round.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 //Componentes
 import { AppComponent } from './app.component';
@@ -24,9 +26,10 @@ import { ListadoComponent } from './concesionario/listado/listado.component';
 
 
 
+
 @NgModule({
-  declarations: [
-    AppComponent,
+  declarations: [    
+    AppComponent,   
     RecetaComponent,
     PropiedadesComponent,
     Page404Component,
@@ -36,10 +39,12 @@ import { ListadoComponent } from './concesionario/listado/listado.component';
     CocheComponent,
     ListadoComponent,
     RoundPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
-    AppRouter
+    AppRouter,
+    FormsModule
   ],
   providers: [
     CochesService
