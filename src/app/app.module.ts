@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //Nuestro Modulo para Routing
 import { AppRouter } from './app.route';
 
 //Services
 import { CochesService } from './providers/coches.service';
+import { RecetasService } from './providers/recetas.service';
 
 //Pipes
 import { RoundPipe } from './pipes/round.pipe';
@@ -22,6 +23,11 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { ConcesionarioComponent } from './concesionario/concesionario.component';
 import { CocheComponent } from './concesionario/coche/coche.component';
 import { ListadoComponent } from './concesionario/listado/listado.component';
+import { RecetarioComponent } from './recetario/recetario.component';
+import { DetalleComponent } from './recetario/detalle/detalle.component';
+import { FormularioComponent } from './recetario/formulario/formulario.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+
 
 
 
@@ -39,15 +45,21 @@ import { ListadoComponent } from './concesionario/listado/listado.component';
     CocheComponent,
     ListadoComponent,
     RoundPipe,
-    FilterPipe
+    FilterPipe,
+    RecetarioComponent,
+    DetalleComponent,
+    FormularioComponent,
+    ReactiveFormsComponent
   ],
   imports: [
     BrowserModule,
     AppRouter,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
-    CochesService
+    CochesService,
+    RecetasService
   ],
   bootstrap: [AppComponent]
 })

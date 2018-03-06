@@ -1,0 +1,19 @@
+{{recetaSelec|json}}
+
+<div class="row">
+  <div class="col-xs-3">
+    <h3>Listado Recetas</h3>   
+    <ul>
+      <li *ngFor="let receta of recetas"
+          (click)="seleccionarReceta(receta)"
+          >{{receta.nombre}}</li>
+    </ul>  
+  </div>
+
+  <div class="col-xs-9">
+    <h3>Detalle Receta</h3>
+    <app-detalle [receta]="recetaSelec"></app-detalle>
+  </div>  
+
+</div>  
+<!-- <div class="row"> -->
