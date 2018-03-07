@@ -1,4 +1,18 @@
 /* Estilos de RecetaDetalleComponent */
+.row{
+    margin-top: 30px;
+}
+.receta-content{
+    border: 1px solid #58d142;
+    padding: 10px;      
+}
+
+h2{
+    background-color: #58d142;
+    color: #FFF;
+    padding: 5px 10px;
+    margin: 0;
+}
 
 .thumbnail {
     position: relative;
@@ -13,7 +27,8 @@
 }
 
 p {
-    font-size: 1.3em;
+    font-size: 1.1em;
+    text-align: justify;
 }
 
 #pieFoto{

@@ -13,7 +13,7 @@ export class RecetarioComponent implements OnInit {
   recetaSelec : Receta;
   glutenFilter : boolean;
 
-  constructor( private recetasService : RecetasService ) { 
+  constructor( public recetasService : RecetasService ) { 
     console.log('RecetarioComponent constructor');
     this.glutenFilter = false;
   }
