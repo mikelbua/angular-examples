@@ -13,6 +13,7 @@ import { HeroService } from './providers/hero.service';
 //Pipes
 import { RoundPipe } from './pipes/round.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { FilterRecetas } from './pipes/filter-recetas.pipe';
 
 //Componentes
 import { AppComponent } from './app.component';
@@ -31,6 +32,7 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
 import { FormComponent } from './concesionario/form/form.component';
 
 
+
 @NgModule({
   declarations: [    
     AppComponent,   
@@ -44,6 +46,7 @@ import { FormComponent } from './concesionario/form/form.component';
     ListadoComponent,
     RoundPipe,
     FilterPipe,
+    FilterRecetas,
     RecetarioComponent,
     DetalleComponent,
     FormularioComponent,

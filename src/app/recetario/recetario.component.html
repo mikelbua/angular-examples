@@ -1,19 +1,32 @@
-{{recetaSelec|json}}
-
-<div class="row">
-  <div class="col-xs-3">
-    <h3>Listado Recetas</h3>   
-    <ul>
-      <li *ngFor="let receta of recetas"
-          (click)="seleccionarReceta(receta)"
-          >{{receta.nombre}}</li>
-    </ul>  
+<div class="container">
+  <!-- Buscador de recetas -->
+  <div class="input-group" id="buscadorRecetas">   
+    <input type="text" class="form-control" placeholder="Busca receta por nombre, cocinero o ingredientes" [(ngModel)]="searchText">
+    <span class="input-group-addon glyphicon glyphicon-search"></span>
   </div>
 
-  <div class="col-xs-9">
-    <h3>Detalle Receta</h3>
-    <app-detalle [receta]="recetaSelec"></app-detalle>
-  </div>  
 
-</div>  
-<!-- <div class="row"> -->
+  <div class="row">
+    <!-- Lista de recetas -->
+    <div id="listaRecetas" class="col-md-3">
+      <h2>Recetas</h2>
+      <div class="list-group">
+        
+        <label for="glutenFilter">Recetas Sin Gluten</label>
+        <input type="checkbox" [(ngModel)]="glutenFilter" name="glutenFilter">
+
+        <a *ngFor='let receta of recetas | filterRecetas : searchText : glutenFilter' class="list-group-item" (click)="seleccionarReceta(receta)">
+            <b>{{receta.nombre}}</b> <br> <em>{{receta.cocinero}}</em>
+            <img [src]=" (receta.isGlutenFree) ? 'assets/imgs/gluten_free_icon.png' : 'assets/imgs/gluten_icon.png' " alt="info gluten" class="icono-gluten">
+        </a>
+    </div>
+    </div><!-- END #listaRecetas -->
+
+    <!-- Componente: RecetaDetalleComponent -->
+    <div id="detalleRecetaComp" class="col-md-9">
+       <app-detalle [receta]="recetaSelec"></app-detalle>
+    </div>
+
+  </div><!-- END .row -->
+
+</div>

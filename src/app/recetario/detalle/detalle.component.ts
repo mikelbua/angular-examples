@@ -16,6 +16,15 @@ export class DetalleComponent implements OnInit {
 
   ngOnInit() {
     console.log('DetalleComponent ngOnInit');
+    console.log('Detalle de la receta: %o', this.receta);
   }
 
+
+  /**
+  * Incremetar likes
+  */
+  sumLike() {
+    console.log('RecetarioComponent sumLike()');
+    this.receta.likes++;
+  }
 }
