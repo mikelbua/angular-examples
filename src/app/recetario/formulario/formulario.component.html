@@ -27,6 +27,16 @@
                     <label for="cocinero">Cocinero:</label>
                     <input id="cocinero" formControlName="cocinero" placeholder="Cocinero">                
                 </div>   
+
+                <label for="">Ingredientes </label>
+                <a (click)="clickOtroIngrediente()">Añadir Ingrediente</a>
+                <div formArrayName="ingredientes"
+                    *ngFor="let ingrediente of formulario.get('ingredientes').controls; let i = index;">                    
+                    <div [formGroupName]="i">
+                        <input formControlName="nombre" placeholder="Nuevo Ingrediente" class="ingrediente-input">                        
+                        <span class="glyphicon glyphicon-remove-circle" (click)="clickEliminarIngrediente(i)"></span>
+                    </div>                   
+                </div>
              
                 <input type="submit" [disabled]="!formulario.valid" class="btn btn-success btn-block" value="Crear">
             </form>

@@ -7,7 +7,7 @@ import { RecetasService } from '../../providers/recetas.service';
 import * as $ from 'jquery';
 
 import { Receta } from '../../model/receta';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario',
@@ -18,10 +18,12 @@ export class FormularioComponent implements OnInit {
 
 
   formulario : FormGroup;
+  ingredientes : FormArray;
   
   constructor( private fb: FormBuilder, public recetasService : RecetasService ) {
     console.log('FormularioComponent constructor');
-    this.crearFormulario();
+    this.crearFormulario();    
+    this.ingredientes = this.formulario.get('ingredientes') as FormArray;
   }
 
   ngOnInit() {
@@ -33,9 +35,32 @@ export class FormularioComponent implements OnInit {
     this.formulario = this.fb.group({
       //FormControl(input) => ['value', [Validaciones] ]
       nombre : ['', [Validators.required, Validators.minLength(2)] ],
-      cocinero : ''
+      cocinero : '',
+      ingredientes : this.fb.array([ this.createIngredienteFormGroup() ])
     });
+  }
 
+  /** 
+   * Creamos un FormGroup para los Ingredientes
+   * */  
+  createIngredienteFormGroup(): FormGroup {
+    console.log('FormularioComponent createIngredienteFormGroup');
+    return this.fb.group({
+      nombre: ['', [Validators.required]]
+    });
+  }
+
+  /** 
+   * Evento para crear un nuevo Ingrediente
+  */
+  clickOtroIngrediente(){
+    console.log('FormularioComponent clickOtroIngrediente');    
+    this.ingredientes.push( this.createIngredienteFormGroup() );
+  }
+
+  clickEliminarIngrediente( index ){
+    console.log('FormularioComponent clickEliminarIngrediente');    
+    this.ingredientes.removeAt(index);
   }
 
   sumitar():void{
@@ -47,8 +72,19 @@ export class FormularioComponent implements OnInit {
 
     let receta = new Receta(nombre);
 
+    //recuperar los ingredientes
+    this.formulario.value.ingredientes.map(element => {
+      receta.addIngrediente( element.nombre );
+    });
+    
+
     //llamar Servicio
     this.recetasService.crear( receta );
+
+    //limpiar Formulario y poner un solo ingrediente
+    this.formulario.reset();
+    this.ingredientes.controls.splice(1);
+
 
     //TODO cerrar modal    
     //$("#modalReceta").modal('hide');
