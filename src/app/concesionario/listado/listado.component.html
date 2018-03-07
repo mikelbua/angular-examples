@@ -2,6 +2,9 @@
 
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let coche of stock | filter : searchText">
-      <a [class.active]="coche==c1|| coche == c2" (click)="seleccionar($event, coche)">{{coche.marca}} {{coche.modelo}}</a>
+      <a [class.active]="coche==c1|| coche == c2" 
+         (click)="seleccionar($event, coche)">
+         {{coche.marca}} {{coche.modelo}} {{coche.version}}
+      </a>
   </li>    
 </ul>

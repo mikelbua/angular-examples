@@ -44,6 +44,4 @@ export class ConcesionarioComponent implements OnInit {
     this.coche1 = event.coche;   
   }
 
-  
-
 }

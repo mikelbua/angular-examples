@@ -8,6 +8,7 @@ import { AppRouter } from './app.route';
 //Services
 import { CochesService } from './providers/coches.service';
 import { RecetasService } from './providers/recetas.service';
+import { HeroService } from './providers/hero.service';
 
 //Pipes
 import { RoundPipe } from './pipes/round.pipe';
@@ -27,10 +28,7 @@ import { RecetarioComponent } from './recetario/recetario.component';
 import { DetalleComponent } from './recetario/detalle/detalle.component';
 import { FormularioComponent } from './recetario/formulario/formulario.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
-
-
-
-
+import { FormComponent } from './concesionario/form/form.component';
 
 
 @NgModule({
@@ -49,7 +47,8 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
     RecetarioComponent,
     DetalleComponent,
     FormularioComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +58,8 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
   ],
   providers: [
     CochesService,
-    RecetasService
+    RecetasService,
+    HeroService
   ],
   bootstrap: [AppComponent]
 })

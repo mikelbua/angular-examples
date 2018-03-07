@@ -32,9 +32,9 @@ export class MOCKS_COCHES {
 	},
 	{
 		"id": 15,
-		"marca": "Bat-movil",
-		"modelo": "Del Caballero Oscuro",
-		"version": "999.999.999",
+		"marca": "BatMovil",
+		"modelo": "Return",
+		"version": "v16",
 		"foto": "http://static.alfabetajuega.com/abj_public_files/multimedia/imagenes/201508/118896.batman-tumbler.jpg",
 		"puertas": 7,
 		"caballos": 230,
@@ -85,7 +85,7 @@ export class MOCKS_COCHES {
 		"marca": "Golf",
 		"modelo": "Gti",
 		"version": " 2.0 TSI",
-		"foto": " http://static.carroya.com/vehiculos/1737056/1737056_1_w.jpg",
+		"foto": "http://www.vw.com/content/dam/vwcom/modelImages/GTI/2018/highlights/GTI-18-0633-Dig_3x2.png",
 		"puertas": 5,
 		"caballos": 230,
 		"consumo": 6.30
