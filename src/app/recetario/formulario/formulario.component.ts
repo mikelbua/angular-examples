@@ -16,14 +16,13 @@ import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@ang
 })
 export class FormularioComponent implements OnInit {
 
-
   formulario : FormGroup;
-  ingredientes : FormArray;
+  ingredientes : FormArray;  
   
   constructor( private fb: FormBuilder, public recetasService : RecetasService ) {
     console.log('FormularioComponent constructor');
-    this.crearFormulario();    
-    this.ingredientes = this.formulario.get('ingredientes') as FormArray;
+    this.crearFormulario();        
+    this.ingredientes = this.formulario.get('ingredientes') as FormArray;   
   }
 
   ngOnInit() {
@@ -39,7 +38,7 @@ export class FormularioComponent implements OnInit {
       descripcion : ['', [Validators.required, Validators.minLength(100)] ],
       gluten : [ "true" , Validators.required],
       imagen : ['assets/imgs/receta_default.jpg', Validators.required],
-      ingredientes : this.fb.array([ this.createIngredienteFormGroup() ])
+      ingredientes : this.fb.array( [ this.createIngredienteFormGroup() ],  Validators.required )
     });
   }
 
@@ -49,7 +48,7 @@ export class FormularioComponent implements OnInit {
   createIngredienteFormGroup(): FormGroup {
     console.log('FormularioComponent createIngredienteFormGroup');
     return this.fb.group({
-      nombre: ['', [Validators.required]]
+      nombre: ['', [Validators.required, Validators.minLength(2)]]
     });
   }
 
@@ -63,21 +62,27 @@ export class FormularioComponent implements OnInit {
 
   clickEliminarIngrediente( index ){
     console.log('FormularioComponent clickEliminarIngrediente');    
-    this.ingredientes.removeAt(index);
+    if( this.ingredientes.length > 1 ){    
+      this.ingredientes.removeAt(index);
+    }  
+      
   }
 
   sumitar():void{
     console.log('FormularioComponent onSubmit');
-
+  
     //recoger datos del formulario
     let receta = this.mapearFormularioReceta(this.formulario);
    
     //llamar Servicio
     this.recetasService.crear( receta );
 
-    //limpiar Formulario y poner un solo ingrediente
-    this.formulario.reset();
-    this.crearFormulario();
+    //Resetar Formulario e Inicializar
+    this.formulario.reset({
+      gluten : "true",
+      imagen : "assets/imgs/receta_default.jpg"
+    });     
+    // dejar solo un ingrediente
     this.ingredientes.controls.splice(1);
 
 

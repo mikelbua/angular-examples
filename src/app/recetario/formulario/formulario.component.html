@@ -43,13 +43,15 @@
                 </div> 
 
                 <label for="">Ingredientes </label>
-                <a (click)="clickOtroIngrediente()">Añadir Ingrediente</a>
-                <div formArrayName="ingredientes"
-                    *ngFor="let ingrediente of formulario.get('ingredientes').controls; let i = index;">                    
-                    <div [formGroupName]="i">
-                        <input formControlName="nombre" placeholder="Nuevo Ingrediente" class="ingrediente-input">                        
-                        <span class="glyphicon glyphicon-remove-circle" (click)="clickEliminarIngrediente(i)"></span>
-                    </div>                   
+                <span (click)="clickOtroIngrediente()">Añadir Ingrediente</span>                
+                <div formArrayName="ingredientes">                                      
+                    <div *ngFor="let ingrediente of formulario.get('ingredientes').controls; let i = index;">                                       
+                        <div [formGroupName]="i">
+                            <input formControlName="nombre" placeholder="Nuevo Ingrediente" class="ingrediente-input">                        
+                            <span class="glyphicon glyphicon-remove-circle" (click)="clickEliminarIngrediente(i)"></span>
+                        </div>                   
+                    </div>
+                    <p class="text-danger" *ngIf="formulario.controls.ingredientes.invalid && formulario.controls.ingredientes.dirty">*Escribe el nombre del ingrediente</p>                                        
                 </div>
              
                 <div [ngClass]="estilosInput(formulario.controls.descripcion)">
@@ -57,7 +59,6 @@
                      <textarea formControlName="descripcion" maxlength="500" class="form-control"></textarea>
                     <p *ngIf="formulario.controls.descripcion.invalid && formulario.controls.descripcion.touched" class="text-danger">*Obligatorio, mínimo 100 letras</p>
                 </div> 
-
 
                 <input type="submit" [disabled]="!formulario.valid" class="btn btn-success btn-block" value="Crear">
             </form>
