@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClient, HttpHandler } from '@angular/common/http';
 
 //Nuestro Modulo para Routing
 import { AppRouter } from './app.route';
@@ -9,6 +10,7 @@ import { AppRouter } from './app.route';
 import { CochesService } from './providers/coches.service';
 import { RecetasService } from './providers/recetas.service';
 import { HeroService } from './providers/hero.service';
+import { TodosService } from './providers/todos.service';
 
 //Pipes
 import { RoundPipe } from './pipes/round.pipe';
@@ -30,6 +32,10 @@ import { DetalleComponent } from './recetario/detalle/detalle.component';
 import { FormularioComponent } from './recetario/formulario/formulario.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { FormComponent } from './concesionario/form/form.component';
+import { PlantillaComponent } from './plantilla/plantilla.component';
+import { TodosComponent } from './todos/todos.component';
+
+
 
 
 
@@ -51,18 +57,23 @@ import { FormComponent } from './concesionario/form/form.component';
     DetalleComponent,
     FormularioComponent,
     ReactiveFormsComponent,
-    FormComponent
+    FormComponent,
+    PlantillaComponent,
+    TodosComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRouter,
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [
+  providers: [    
+    HttpClientModule,    
     CochesService,
     RecetasService,
-    HeroService
+    HeroService,
+    TodosService
   ],
   bootstrap: [AppComponent]
 })

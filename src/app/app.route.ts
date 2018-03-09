@@ -10,16 +10,20 @@ import { ConcesionarioComponent } from './concesionario/concesionario.component'
 import { UsuarioComponent } from './usuario/usuario.component';
 import { RecetarioComponent } from './recetario/recetario.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { PlantillaComponent } from './plantilla/plantilla.component';
+import { TodosComponent } from './todos/todos.component';
 
 //Rutas de nuestra App
 const appRoutes: Routes = [
     { path: '',            component: HomeComponent },
     { path: 'home',        component: HomeComponent },
     { path: 'receta',       component: RecetaComponent },
+    { path: 'todos',       component: TodosComponent },
     { path: 'usuario',       component: UsuarioComponent },
     { path: 'propiedades',  component: PropiedadesComponent },   
     { path: 'recetario',       component: RecetarioComponent },
     { path: 'formularios',       component: ReactiveFormsComponent },
+    { path: 'plantilla',       component: PlantillaComponent },
     { path: 'concesionario',  component: ConcesionarioComponent },   
     { path: '**',           component: Page404Component }
   ];

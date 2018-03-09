@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Receta } from '../model/receta';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { RecetasService } from '../providers/recetas.service';
 
 @Component({
@@ -20,7 +21,20 @@ export class RecetarioComponent implements OnInit {
 
   ngOnInit() {
     console.log('RecetarioComponent ngOnInit');
-    this.recetas = this.recetasService.getAll();
+    this.recetasService.getAll().subscribe(
+      result=>{
+        console.log('response correcto %o', result);
+        if(result.code != 200){
+          console.warn(result);
+        }else{
+            console.log('datos recibidos %o' , result.data);
+            
+        }
+      },
+      error=>{
+        console.warn(error);
+      }
+    );
 
     this.recetaSelec = this.recetas[0] || new Receta('Anonimo');
 
