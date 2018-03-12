@@ -15,10 +15,10 @@ Arrancar App `ng serve --open`
 
 ## Servicio Rest de pruebas 
 
-Instalar servidor "json-server" `npm install -g json-server`
-Mover hasta la carpeta raiz del proyecto.
-Arrancar servidor Rest `json-server --watch db.json`
-Abrir navegador `http://localhost:3000/`
+Instalar servidor "json-server" `npm install -g json-server`  
+Mover hasta la carpeta raiz del proyecto.  
+Arrancar servidor Rest `json-server --watch db.json`  
+Abrir navegador `http://localhost:3000/`  
 
 Más info `https://github.com/anderuraga/json-server`
 
