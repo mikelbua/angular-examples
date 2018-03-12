@@ -8,21 +8,20 @@ Proyecto para Aprender Angular
 * ReactiveForms
 * Services
 
-## instalacion
-Run `npm install`
+## Instalacion App Angular
+Ejecutar `npm install`
+Arrancar App `ng serve --open`
 
-## Development server
 
-Run `ng serve --open` servidor pruebas.
-Navigate to `http://localhost:4200/`.
-Los cambios se refrescan segun vayamos cambiando el codigo.
+## Servicio Rest de pruebas 
 
-## Servicio  con Node y Express
+Instalar servidor "json-server" `npm install -g json-server`
+Mover hasta la carpeta raiz del proyecto.
+Arrancar servidor Rest `json-server --watch db.json`
+Abrir navegador `http://localhost:3000/`
 
-Run `cd server`
-Run `node app.js`
+Más info `https://github.com/anderuraga/json-server`
 
- Abrir navegador `http://localhost:3000/receta/`
 
 
 ## tag 0.1

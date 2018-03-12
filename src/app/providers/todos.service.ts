@@ -14,7 +14,9 @@ export class TodosService {
     console.log('TodosService constructor');
   }
 
-
+  /** 
+   * Recuperamos todas las Tareas sin filtrar por usuario
+  */
   getTodos():Observable<any>{
 
     //let url = END_POINT + '/todos?userId=2';
@@ -24,31 +26,55 @@ export class TodosService {
 
   }
 
-  delete(id){
+  /**
+   * Eliminamos una Tarea por su id
+   * @param id : number
+   */
+  delete(id:number){
     let url = END_POINT + '/todos/'+id;
     console.log(`TodosService delete ${url}`);
     return this.http.delete(url);
   }
 
-post(todo:Todo){
-    let url = END_POINT + '/todos/';
-    console.log(`TodosService put ${url}`);
+  /**
+   * Creamos una nueva Tarea
+   * @param todo : Todo
+   */
+  post(todo:Todo):Observable<any>{
+      let url = END_POINT + '/todos/';
+      console.log(`TodosService put ${url}`);
 
-    let body = {
-                  // "id": todo.id,
-                  "userId": todo.idUser,
-                  "title": todo.title,
-                  "completed": todo.completed    
-                } 
-              
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json'
-      })
-    };
+      let body = {
+                    // "id": todo.id,
+                    "userId": todo.idUser,
+                    "title": todo.title,
+                    "completed": todo.completed    
+                  } 
+                
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type':  'application/json'
+        })
+      };
 
-    return this.http.post( url, body , httpOptions );
-  }
+      return this.http.post( url, body , httpOptions );
+    }
+
+    /**
+     * Modificamos el estado "completed" de una Tarea por su id
+     * @param todo : Todo
+     */
+    patch(todo: Todo):Observable<any>{
+      let url = END_POINT + `/todos/${todo.id}`;
+      console.log(`TodosService patch ${url}`);
+
+      let body = {                    
+                    "completed": !todo.completed    
+                  } 
+                
+      
+      return this.http.patch( url, body );
+    }
 
 
 }
