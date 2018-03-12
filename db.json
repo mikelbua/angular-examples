@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "todos": [
+    {
+      "userId": 2,
+      "title": "Repasar js y angular",
+      "completed": false,
+      "id": 13
+    },
+    {
+      "userId": -1,
+      "title": "nueva tarea",
+      "completed": false,
+      "id": 14
+    },
+    {
+      "userId": -1,
+      "title": "otra tarea",
+      "completed": false,
+      "id": 15
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
