@@ -17,6 +17,7 @@ export class RecetarioComponent implements OnInit {
   constructor( public recetasService : RecetasService ) { 
     console.log('RecetarioComponent constructor');
     this.glutenFilter = false;
+    this.recetas = [];
   }
 
   ngOnInit() {
@@ -24,12 +25,13 @@ export class RecetarioComponent implements OnInit {
     this.recetasService.getAll().subscribe(
       result=>{
         console.log('response correcto %o', result);
-        if(result.code != 200){
-          console.warn(result);
-        }else{
-            console.log('datos recibidos %o' , result.data);
-            
-        }
+        let receta: Receta;
+        result.forEach( element => {
+            receta = new Receta("");
+            receta.mapperJson(element);
+            this.recetas.push(receta);
+        });
+        
       },
       error=>{
         console.warn(error);

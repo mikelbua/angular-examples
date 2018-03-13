@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Receta } from '../model/receta';
-import { MOCK_RECETA } from './mock.recetas';
 // Importar objetos de la librería http
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 // Importar la clase Observable desde la librería rxjs
@@ -19,29 +18,10 @@ export class RecetasService {
 
 
   getAll(): Observable<any>{
-    console.log(`RecetasService getAll ${API}receta`);    
-    return this.http.get(`${API}/receta`);
+    let url = `${API}/recetas`;
+    console.log(`RecetasService getAll ${url}`);    
+    return this.http.get(url);
     
-    /*
-    let jsonData = JSON.parse(MOCK_RECETA);
-    this.recetas = [];
-    let receta;
-
-    jsonData.forEach( el => {
-       receta = new Receta( el.nombre, el.cocinero);
-       receta.id = el.id;
-       receta.ingredientes = el.ingredientes;
-       receta.imagen = el.foto;
-       receta.likes = el.likes;
-       receta.cocinero = el.cocinero;
-       receta.descripcion = el.descripcion;
-       receta.isGlutenFree = el.isGlutenFree;
-
-       this.recetas.push(receta);
-    });
-
-    return this.recetas;
-    */
   }
 
   /**

@@ -33,4 +33,15 @@ export class Receta {
         this.ingredientes.push(ingrediente);
     }
 
+    mapperJson( json:any ){
+       this.id = json.id;
+       this.nombre = json.nombre;
+       this.imagen = json.foto;
+       this.likes =json.likes;
+       this.cocinero = json.cocinero;
+       this.descripcion = json.descripcion;
+       this.isGlutenFree = json.isGlutenFree;
+       this.ingredientes = json.ingredientes;
+    }
+
 }
