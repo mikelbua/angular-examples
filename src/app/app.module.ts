@@ -34,6 +34,7 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
 import { FormComponent } from './concesionario/form/form.component';
 import { PlantillaComponent } from './plantilla/plantilla.component';
 import { TodosComponent } from './todos/todos.component';
+import { FormBasicoComponent } from './form-basico/form-basico.component';
 
 
 
@@ -59,7 +60,8 @@ import { TodosComponent } from './todos/todos.component';
     ReactiveFormsComponent,
     FormComponent,
     PlantillaComponent,
-    TodosComponent
+    TodosComponent,
+    FormBasicoComponent
   ],
   imports: [
     BrowserModule,

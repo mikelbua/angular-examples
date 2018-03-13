@@ -12,6 +12,7 @@ import { RecetarioComponent } from './recetario/recetario.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { PlantillaComponent } from './plantilla/plantilla.component';
 import { TodosComponent } from './todos/todos.component';
+import { FormBasicoComponent } from './form-basico/form-basico.component';
 
 //Rutas de nuestra App
 const appRoutes: Routes = [
@@ -22,7 +23,8 @@ const appRoutes: Routes = [
     { path: 'usuario',       component: UsuarioComponent },
     { path: 'propiedades',  component: PropiedadesComponent },   
     { path: 'recetario',       component: RecetarioComponent },
-    { path: 'formularios',       component: ReactiveFormsComponent },
+    { path: 'formulario-basico',       component: FormBasicoComponent },
+    { path: 'formulario-complejo',       component: ReactiveFormsComponent },    
     { path: 'plantilla',       component: PlantillaComponent },
     { path: 'concesionario',  component: ConcesionarioComponent },   
     { path: '**',           component: Page404Component }
