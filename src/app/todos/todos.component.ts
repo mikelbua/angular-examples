@@ -36,6 +36,8 @@ export class TodosComponent implements OnInit {
         console.warn('peticion incorrecta %o', error);
       }
     );//subscribe
+
+    
   }
 
   /**

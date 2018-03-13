@@ -4,9 +4,10 @@ import { Receta } from '../model/receta';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 // Importar la clase Observable desde la librería rxjs
 import { Observable } from 'rxjs/Observable';
+import { GLOBAL } from '../GLOBAL';
 
 
-const API = "http://localhost:3000"; 
+
 
 @Injectable()
 export class RecetasService {
@@ -18,7 +19,7 @@ export class RecetasService {
 
 
   getAll(): Observable<any>{
-    let url = `${API}/recetas`;
+    let url = `${GLOBAL.endpoint}/recetas`;
     console.log(`RecetasService getAll ${url}`);    
     return this.http.get(url);
     
