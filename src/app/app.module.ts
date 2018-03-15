@@ -11,6 +11,7 @@ import { CochesService } from './providers/coches.service';
 import { RecetasService } from './providers/recetas.service';
 import { HeroService } from './providers/hero.service';
 import { TodosService } from './providers/todos.service';
+import { CasaService } from './providers/casa.service';
 
 //Pipes
 import { RoundPipe } from './pipes/round.pipe';
@@ -35,6 +36,10 @@ import { FormComponent } from './concesionario/form/form.component';
 import { PlantillaComponent } from './plantilla/plantilla.component';
 import { TodosComponent } from './todos/todos.component';
 import { FormBasicoComponent } from './form-basico/form-basico.component';
+import { InmobiliariaComponent } from './inmobiliaria/inmobiliaria.component';
+import { CasaDetalleComponent } from './inmobiliaria/casa-detalle/casa-detalle.component';
+import { FilterCasa } from './pipes/filter-casa';
+
 
 
 
@@ -50,10 +55,7 @@ import { FormBasicoComponent } from './form-basico/form-basico.component';
     UsuarioComponent,
     ConcesionarioComponent,
     CocheComponent,
-    ListadoComponent,
-    RoundPipe,
-    FilterPipe,
-    FilterRecetas,
+    ListadoComponent,    
     RecetarioComponent,
     DetalleComponent,
     FormularioComponent,
@@ -61,7 +63,14 @@ import { FormBasicoComponent } from './form-basico/form-basico.component';
     FormComponent,
     PlantillaComponent,
     TodosComponent,
-    FormBasicoComponent
+    FormBasicoComponent,
+    InmobiliariaComponent,
+    CasaDetalleComponent,
+
+    RoundPipe,    
+    FilterPipe,
+    FilterRecetas,
+    FilterCasa
   ],
   imports: [
     BrowserModule,
@@ -75,7 +84,8 @@ import { FormBasicoComponent } from './form-basico/form-basico.component';
     CochesService,
     RecetasService,
     HeroService,
-    TodosService
+    TodosService,
+    CasaService
   ],
   bootstrap: [AppComponent]
 })

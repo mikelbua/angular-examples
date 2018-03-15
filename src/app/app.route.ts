@@ -13,10 +13,12 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
 import { PlantillaComponent } from './plantilla/plantilla.component';
 import { TodosComponent } from './todos/todos.component';
 import { FormBasicoComponent } from './form-basico/form-basico.component';
+import { InmobiliariaComponent } from './inmobiliaria/inmobiliaria.component';
 
 //Rutas de nuestra App
 const appRoutes: Routes = [
     { path: '',            component: HomeComponent },
+    { path: 'inmobiliaria', component: InmobiliariaComponent },
     { path: 'home',        component: HomeComponent },
     { path: 'receta',       component: RecetaComponent },
     { path: 'todos',       component: TodosComponent },
