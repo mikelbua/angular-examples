@@ -22,21 +22,7 @@ export class InmobiliariaComponent implements OnInit {
 
   constructor( private casaService: CasaService ) { 
     console.log('InmobiliariaComponent constructor');
-    this.casas = [];
-
-
-
-
-/*
-// Without JQuery
-var slider = new Slider('#ex1', {
-	formatter: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-*/
-    
-    
+    this.casas = [];   
   }
 
   ngOnInit() {
@@ -58,9 +44,12 @@ var slider = new Slider('#ex1', {
 
   }
 
+  /** 
+   * Controlar que el precio Maximo no sea inferior al minimo 
+  */
   checkPrecio(){
     console.log('checkPrecio');
-    this.precioMax = ( this.precioMax < this.precioMin )?this.precioMax:this.precioMin;
+    this.precioMax = ( this.precioMax > this.precioMin )?this.precioMax:this.precioMin;
   }
 
   mapeo(jsonData: any): any {

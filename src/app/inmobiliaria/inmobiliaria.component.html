@@ -15,15 +15,8 @@
         <input type="number" [(ngModel)]="precioMin">
 
         <label>Max:</label>
-        <input type="number" [(ngModel)]="precioMax" (change)="checkPrecio()">
-
-
-        <section class="range-slider">
-            <span class="rangeValues"></span>
-            <input value="5" min="0" max="15" step="0.5" type="range" multiple>
-            <input value="10" min="0" max="15" step="0.5" type="range" multiple>
-          </section>
-       
+        <input type="number" [(ngModel)]="precioMax" (ngModelChange)="checkPrecio($event)">
+ 
       </div>
 
       <div *ngFor="let casa of casas | filterCasa : searchText : modo : precioMin : precioMax" 
