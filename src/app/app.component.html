@@ -12,36 +12,52 @@
           </div>
           <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">        
-              <li routerLinkActive="active">
-                  <a [routerLink]="['recetario']">Recetario</a>
-              </li>  
-              <li routerLinkActive="active">
-                <a [routerLink]="['inmobiliaria']">Inmobiliaria</a>
-            </li>  
-              <li routerLinkActive="active">
-                <a [routerLink]="['todos']">Todos</a>
-              </li> 
-              <li routerLinkActive="active">
-                  <a [routerLink]="['receta']">Receta</a>
-              </li>  
-              <li routerLinkActive="active">
-                  <a [routerLink]="['usuario']">Usuario</a>
-              </li>  
-              <li routerLinkActive="active">
-                <a [routerLink]="['formulario-basico']">Formulario Básico</a>
-            </li> 
-              <li routerLinkActive="active">
-                  <a [routerLink]="['formulario-complejo']">Formulario Complejo</a>
-              </li> 
-              <li routerLinkActive="active">
-                  <a [routerLink]="['propiedades']">Propiedades</a>
-              </li>  
-              <li routerLinkActive="active">
-                <a [routerLink]="['plantilla']">Plantilla</a>
-               </li>  
-              <li routerLinkActive="active">
-                <a [routerLink]="['concesionario']">Concesionario</a>
+
+              <!-- ejemplos basicos -->
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  Básicos<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li> <a [routerLink]="['receta']">Receta</a></li>
+                  <li> <a [routerLink]="['usuario']">Usuario</a></li>   
+                  <li> <a [routerLink]="['propiedades']">Propiedades</a></li>  
+                  <li><a [routerLink]="['plantilla']">Plantilla</a></li>             
+                </ul>
               </li>
+
+              <!-- formularios -->
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  Formularios<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a [routerLink]="['formulario-basico']">Formulario Básico</a></li>
+                  <li><a [routerLink]="['formulario-complejo']">Formulario Complejo</a></li>                  
+                </ul>
+              </li>             
+             
+              <!-- ejemplos avanzados -->
+                <li routerLinkActive="active">
+                    <a [routerLink]="['recetario']">Recetario</a>
+                </li>  
+
+                <li routerLinkActive="active">
+                  <a [routerLink]="['inmobiliaria']">Inmobiliaria</a>
+                </li>  
+
+                <li routerLinkActive="active">
+                  <a [routerLink]="['todos']">Todos-Rest</a>
+                </li> 
+               
+                <li routerLinkActive="active">
+                  <a [routerLink]="['concesionario']">Concesionario</a>
+                </li>
+
+                <li routerLinkActive="active" class="btn-warning dropdown-toggle">
+                    <a [routerLink]="['backoffice']">Backoffice</a>
+                </li>
+
             </ul>
           </div><!--/.nav-collapse -->
         </div>

@@ -14,6 +14,8 @@ import { PlantillaComponent } from './plantilla/plantilla.component';
 import { TodosComponent } from './todos/todos.component';
 import { FormBasicoComponent } from './form-basico/form-basico.component';
 import { InmobiliariaComponent } from './inmobiliaria/inmobiliaria.component';
+import { BackofficeComponent } from './backoffice/backoffice.component';
+import { AuthGuard } from './guards/auth.guard';
 
 //Rutas de nuestra App
 const appRoutes: Routes = [
@@ -29,6 +31,7 @@ const appRoutes: Routes = [
     { path: 'formulario-complejo',       component: ReactiveFormsComponent },    
     { path: 'plantilla',       component: PlantillaComponent },
     { path: 'concesionario',  component: ConcesionarioComponent },   
+    { path: 'backoffice',  component: BackofficeComponent , canActivate: [AuthGuard], },   
     { path: '**',           component: Page404Component }
   ];
 

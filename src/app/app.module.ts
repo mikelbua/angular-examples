@@ -6,6 +6,9 @@ import { HttpClientModule, HttpClient, HttpHandler } from '@angular/common/http'
 //Nuestro Modulo para Routing
 import { AppRouter } from './app.route';
 
+//Guards
+import { AuthGuard } from './guards/auth.guard';
+
 //Services
 import { CochesService } from './providers/coches.service';
 import { RecetasService } from './providers/recetas.service';
@@ -17,6 +20,7 @@ import { CasaService } from './providers/casa.service';
 import { RoundPipe } from './pipes/round.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FilterRecetas } from './pipes/filter-recetas.pipe';
+import { FilterCasa } from './pipes/filter-casa';
 
 //Componentes
 import { AppComponent } from './app.component';
@@ -38,7 +42,8 @@ import { TodosComponent } from './todos/todos.component';
 import { FormBasicoComponent } from './form-basico/form-basico.component';
 import { InmobiliariaComponent } from './inmobiliaria/inmobiliaria.component';
 import { CasaDetalleComponent } from './inmobiliaria/casa-detalle/casa-detalle.component';
-import { FilterCasa } from './pipes/filter-casa';
+import { BackofficeComponent } from './backoffice/backoffice.component';
+
 
 
 
@@ -70,7 +75,8 @@ import { FilterCasa } from './pipes/filter-casa';
     RoundPipe,    
     FilterPipe,
     FilterRecetas,
-    FilterCasa
+    FilterCasa,
+    BackofficeComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +91,8 @@ import { FilterCasa } from './pipes/filter-casa';
     RecetasService,
     HeroService,
     TodosService,
-    CasaService
+    CasaService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
