@@ -1,4 +1,4 @@
-# Angular Recetas
+# Angular Ejemplos
 
 Proyecto para Aprender Angular
 
@@ -7,6 +7,7 @@ Proyecto para Aprender Angular
 * Routing
 * ReactiveForms
 * Services
+* Guards
 
 ## Instalacion App Angular
 Ejecutar `npm install`
