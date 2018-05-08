@@ -30,3 +30,6 @@ Listado de Recetas y alta de nuevas recetas con Json hardcodeado.
 
 ![Alt text](https://github.com/anderuraga/angular-recetas/blob/master/screenshoot1.png)
 
+## Crud Servicio Rest
+Ejemplo de realizaar un CRUD contra un servicio rest para gestionar tareas
+![Alt text](https://github.com/anderuraga/angular-recetas/blob/master/screenshoot2.png)
