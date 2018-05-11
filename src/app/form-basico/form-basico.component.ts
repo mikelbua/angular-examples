@@ -24,7 +24,8 @@ export class FormBasicoComponent implements OnInit {
                       '',  // Value
                       [    //Validaciones
                           Validators.required, 
-                          Validators.minLength(3)
+                          Validators.minLength(3),
+                          Validators.maxLength(8)
                       ]  
                   ] 
       });

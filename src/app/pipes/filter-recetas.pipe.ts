@@ -13,11 +13,7 @@ export class FilterRecetas implements PipeTransform {
 
     //Filtramos si llevan gluten o no
     if (isGlutenFree) {
-      recetas.forEach(it => {
-        if (it.isGlutenFree) {
-          recetasFilterArray.push(it);
-        }
-      });
+      recetasFilterArray = recetas.filter( (receta)=> receta.isGlutenFree );
     } else {
       recetasFilterArray = recetas;
     }

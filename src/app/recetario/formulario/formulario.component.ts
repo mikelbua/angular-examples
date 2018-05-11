@@ -38,9 +38,10 @@ export class FormularioComponent implements OnInit {
       descripcion : ['', [Validators.required, Validators.minLength(100)] ],
       gluten : [ "true" , Validators.required],
       imagen : ['assets/imgs/receta_default.jpg', Validators.required],
-      ingredientes : this.fb.array( [ this.createIngredienteFormGroup() ],  Validators.required )
+      ingredientes : this.fb.array( [ this.createIngredienteFormGroup() ],   Validators.minLength(3) )
     });
   }
+
 
   /** 
    * Creamos un FormGroup para los Ingredientes

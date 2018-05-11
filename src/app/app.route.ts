@@ -31,7 +31,9 @@ const appRoutes: Routes = [
     { path: 'formulario-complejo',       component: ReactiveFormsComponent },    
     { path: 'plantilla',       component: PlantillaComponent },
     { path: 'concesionario',  component: ConcesionarioComponent },   
+    //guard
     { path: 'backoffice',  component: BackofficeComponent , canActivate: [AuthGuard], },   
+    //ultima opcion para 404
     { path: '**',           component: Page404Component }
   ];
 

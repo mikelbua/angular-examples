@@ -20,7 +20,7 @@ export class TodosService {
   getTodos():Observable<any>{
 
     //let url = END_POINT + '/todos?userId=2';
-    let url = GLOBAL.endpoint + '/todos';
+    const url = GLOBAL.endpoint + '/todos';
     console.log(`TodosService getTodos ${url}`);
     return this.http.get(url);
 

@@ -10,6 +10,7 @@ export class AuthGuard implements CanActivate {
 
     let permiso = true; //TODO crear servicio para login
     if ( !permiso ){
+      //enviar a LoginComponent
       alert('sin permisos');
     }  
     return permiso;

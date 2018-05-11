@@ -6,6 +6,13 @@
       "author": "typicode"
     }
   ],
+  "alumno": [
+    {
+      "id": 1,
+      "nombre": "pepe",
+      "apellido": "Gcifuentes"
+    }
+  ],
   "comments": [
     {
       "id": 1,
@@ -70,21 +77,21 @@
   "todos": [
     {
       "userId": -1,
-      "title": "Hola",
-      "completed": true,
-      "id": 2
-    },
-    {
-      "userId": -1,
       "title": "Aprender Angular 2.5",
-      "completed": false,
+      "completed": true,
       "id": 3
     },
     {
       "userId": -1,
-      "title": "Otra",
+      "title": "nueva",
       "completed": false,
-      "id": 4
+      "id": 5
+    },
+    {
+      "userId": -1,
+      "title": "assasasa",
+      "completed": false,
+      "id": 6
     }
   ],
   "recetas": [

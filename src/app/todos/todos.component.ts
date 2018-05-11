@@ -30,7 +30,9 @@ export class TodosComponent implements OnInit {
     this.todosService.getTodos().subscribe(
       resultado => {
         console.debug('peticion correcta %o', resultado);
-        this.mapeo(resultado);
+       // this.mapeo(resultado);
+      // this.todos = resultado.filter( todo => !todo.completed );
+         this.todos = resultado;
       },
       error=>{
         console.warn('peticion incorrecta %o', error);
