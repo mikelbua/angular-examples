@@ -43,6 +43,7 @@ import { FormBasicoComponent } from './form-basico/form-basico.component';
 import { InmobiliariaComponent } from './inmobiliaria/inmobiliaria.component';
 import { CasaDetalleComponent } from './inmobiliaria/casa-detalle/casa-detalle.component';
 import { BackofficeComponent } from './backoffice/backoffice.component';
+import { SaludarComponent } from './saludar/saludar.component';
 
 
 
@@ -71,12 +72,14 @@ import { BackofficeComponent } from './backoffice/backoffice.component';
     FormBasicoComponent,
     InmobiliariaComponent,
     CasaDetalleComponent,
+    BackofficeComponent,
+    SaludarComponent,
 
     RoundPipe,    
     FilterPipe,
     FilterRecetas,
-    FilterCasa,
-    BackofficeComponent
+    FilterCasa    
+    
   ],
   imports: [
     BrowserModule,

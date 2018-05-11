@@ -16,6 +16,7 @@ import { FormBasicoComponent } from './form-basico/form-basico.component';
 import { InmobiliariaComponent } from './inmobiliaria/inmobiliaria.component';
 import { BackofficeComponent } from './backoffice/backoffice.component';
 import { AuthGuard } from './guards/auth.guard';
+import { SaludarComponent } from './saludar/saludar.component';
 
 //Rutas de nuestra App
 const appRoutes: Routes = [
@@ -31,6 +32,8 @@ const appRoutes: Routes = [
     { path: 'formulario-complejo',       component: ReactiveFormsComponent },    
     { path: 'plantilla',       component: PlantillaComponent },
     { path: 'concesionario',  component: ConcesionarioComponent },   
+    //ejemplo paso parametro
+    { path: 'saludar/:pNombre',  component: SaludarComponent },   
     //guard
     { path: 'backoffice',  component: BackofficeComponent , canActivate: [AuthGuard], },   
     //ultima opcion para 404
